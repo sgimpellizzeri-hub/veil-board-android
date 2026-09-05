@@ -32,8 +32,11 @@ jobs:
           mkdir project
           unzip VeilBoard-project-v1.zip -d project
 
-      - name: Build APK
-        run: gradle -p project --no-daemon assembleDebug
+            - name: Build APK
+        run: |
+          sed -i 's/r\.entity()/r.entity/g' project/app/src/main/java/com/veilboard/game/MainActivity.java
+          gradle -p project --no-daemon assembleDebug
+  
 
       - name: Save APK
         uses: actions/upload-artifact@v4
