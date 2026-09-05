@@ -29,7 +29,7 @@ jobs:
       - name: Unpack project
         run: |
           mkdir project
-          unzip VeilBoard-project-v1.zip -d project
+          unzip VeilBoard-project-v2.zip -d project
 
       - name: Build APK
         run: |
